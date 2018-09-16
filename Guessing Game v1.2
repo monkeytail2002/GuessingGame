@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class Guessing
+{
+    public static int getRandomNumber()
+    {
+        return (int)(Math.random()*20+1);
+        //creates random number
+    }
+    
+    public static void main(String[] args)
+    {
+        Scanner kboard = new Scanner(System.in);
+        int number = getRandomNumber();  // calls the random number to the variable
+        int guess;
+        System.out.println(+number);  // Test random number by displaying it.
+        System.out.println("Do you want to play a guessing game?  See if you can guess the number I'm thinking of.");
+        System.out.println("Please enter a guess between 1 and 21");
+        guess = kboard.nextInt();  //allows keyboard integer input to be accepted.
+              
+  // if condition checks if the game works.
+        if (guess == number){
+            System.out.println("Ah ha! You have found the magic number that is "+number);
+        }
+        else if (guess < number){
+         System.out.println("Nope, that number is way too low for me.");
+        }
+        else if (guess > number && guess <= 21)
+        {
+            System.out.println("Nope, that number is way too high for me.");
+        }
+        else if (guess > 21)
+        {
+        	System.out.println("Oi!  I said between 1 and 21");
+        }
+    
+    }
+        
+}
+}
