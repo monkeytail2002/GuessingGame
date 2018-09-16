@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class Guessing
+{
+    public static int getRandomNumber()
+    {
+        return (int)(Math.random()*20+1);
+        //creates random number
+    }
+    
+    public static void main(String[] args)
+    {
+        Scanner kboard = new Scanner(System.in);
+        int number = getRandomNumber(); // calls the random number to the variable
+        int guess;
+        int trycount = 0;  //variable to set guess counter at 0
+        boolean gamewin = false; //Set boolean for while loop conditions.
+     //  System.out.println(+number);  Test random number by displaying it.
+        System.out.println("Do you want to play a guessing game?  See if you can guess the number I'm thinking of.");
+        System.out.println("Please enter a guess between 1 and 21");
+        guess = kboard.nextInt(); //allows keyboard integer input to be accepted.
+        trycount++;  //increments guess value by 1
+        
+        while (gamewin == false)
+        	//while the number hasn't been guessed, this loop will continue to ask the player to guess
+        {
+        if (guess == number){
+            System.out.println("Ah ha! You have found the magic number that is "+number);
+            gamewin = true; //condition to break while loop has been found.
+        }
+        else if (guess < number){
+         System.out.println("Nope, that number is way too low for me.");
+         trycount++;
+         System.out.println("Have another go, this will be guess number "+trycount);
+         //If the guess is lower than the number then this message is displayed.
+         guess = kboard.nextInt();
+        }
+        else if (guess > number && guess < 21)
+        {
+            System.out.println("Nope, that number is way too high for me.");
+            trycount++;
+            System.out.println("Have another go, this will be guess number "+trycount);
+          //If the guess is higher than the number but lower than or equal to 21 then this message is displayed.
+            guess = kboard.nextInt();
+        }
+        else if (guess > 21)
+        {
+        	System.out.println("Oi!  I said between 1 and 21");
+        	  trycount++;
+        	  System.out.println("Have another go, this will be guess number "+trycount);
+        	  //If the guess is higher than 21 then this message is displayed.
+              guess = kboard.nextInt();
+        }
+    
+    }
+        
+}
+}
