@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class Guessing
+{
+    public static int getRandomNumber()
+    {
+        return (int)(Math.random()*20+1);
+        //creates random number
+    }
+ public static void main(String[] args)
+    {
+
+        int number = getRandomNumber();
+        System.out.println(+number);  //Test random number by displaying it.
+        
+    }
+}
