@@ -1,0 +1,13 @@
+//15009351 Angus MacDonald 21/9/18 
+//GamePanel class for Guessing Game which runs the game
+
+
+public class GamePanel {
+
+	public static void main(String[] args) {
+		Game game = new Game();  //Calls in game class
+		game.startGame();  //sets startGame method from game class
+
+	}
+
+}
