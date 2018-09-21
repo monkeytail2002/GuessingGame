@@ -1,0 +1,13 @@
+//15009351 Angus MacDonald 21/9/18 
+//Guess class for Guessing Game which creates the hidden number
+
+public class Guess {
+	
+	int number = 0;
+
+	public int getRandomNumber()
+	{
+		return number = (int)(Math.random()*20+1);
+	}
+
+}
